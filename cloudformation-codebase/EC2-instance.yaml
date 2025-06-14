@@ -1,0 +1,22 @@
+AWSTemplateFormatVersion: '2010-09-09'
+
+Description: This CloudFormation template is intended for testing purposes. It provisions
+  a single Amazon EC2 instance of type t2.micro using a specified KeyPair to
+  allow SSH access. The template is useful for beginners to understand how
+  CloudFormation works and how to structure a basic EC2 deployment using YAML.
+
+Resources:
+  NewEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-020cba7c55df1f615
+      InstanceType: t2.micro
+      KeyName: 22042025linux
+      SecurityGroupIds: 
+        - sg-0ab0472d009ff7177
+      Tags: 
+        - Key: Name
+          Value: testInstance
+      
+
+
